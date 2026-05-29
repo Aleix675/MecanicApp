@@ -1,7 +1,9 @@
 from fastapi import APIRouter, Depends,HTTPException
 from sqlalchemy.orm import Session
 from app.database.dependencies import get_db
+from app.security.dependencies import requerir_admin
 from app.models.servei import Servei
+from app.schemas import usuari
 from app.schemas.servei import ServeiResponse,ServeiCreate,ServeiUpdate
 
 router = APIRouter()
@@ -22,7 +24,7 @@ def obtenir_vehicle(serveis_id: int, db: Session = Depends(get_db)):
 
 # POST crear
 @router.post("/serveis", response_model=ServeiResponse, status_code=201)
-def crear_vehicle(dades: ServeiCreate, db: Session = Depends(get_db)):
+def crear_vehicle(dades: ServeiCreate, db: Session = Depends(get_db) , admin: usuari = Depends(requerir_admin)):
     
     servei = Servei(**dades.model_dump())
     db.add(servei)

@@ -18,7 +18,9 @@ from sqlalchemy.orm import Session
 app = FastAPI(
     title="MecànicApp API",
     description="API REST per a gestió de taller mecànic",
-    version="1.0.0"
+    version="1.0.0",
+    docs_url="/docs",      
+    redoc_url="/redoc"     
 )
 app.add_middleware(
     CORSMiddleware,

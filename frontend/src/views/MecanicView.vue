@@ -185,7 +185,7 @@ const completadesAvui = computed(() =>
   citesAvui.value.filter(c => c.estat === 'COMPLETADA').length
 )
 const pendentsAvui = computed(() =>
-  citesAvui.value.filter(c => c.estat === 'PENDENT' || c.estat === 'CONFIRMADA').length
+  citesAvui.value.filter(c => c.estat === 'PENDENT' || c.estat === 'CONFIRMADA' ).length
 )
 
 function colorEstat(estat) {
