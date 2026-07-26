@@ -1,6 +1,9 @@
 from pydantic import BaseModel
 from datetime import datetime
 
+#Els schemas defineixen l'estructura de les dades que entren i surten de l'API. 
+#Utilitzen Pydantic per validar les dades i serialitzar els objectes dels models.
+
 class UsuariResponse(BaseModel):
     id:int
     nom:str

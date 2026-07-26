@@ -33,3 +33,6 @@ class Usuari(Base):
 #SELECT * FROM vehicle WHERE usuari_id = 1;
 #Con relationship Puedes hacer: usuari.vehicles
 #y SQLAlchemy hace el SQL automáticamente.
+
+#Les claus foranes defineixen la relació a nivell de base de dades, mentre que [[ relationship() ]] 
+#permet navegar entre objectes Python relacionats.
